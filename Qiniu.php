@@ -1,7 +1,8 @@
 <?php
 namespace Tiramisu;
 
-require_once './vendor/autoload.php';
+require_once '../vendor/autoload.php';
+
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
 /**
