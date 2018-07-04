@@ -1,12 +1,19 @@
 # qiniu
-第一版
+有参考
 
 ### 第一步
-    在Qiniu.php中配置自己的ak和sk 还有上传的地址空间
+	在config.php中配置
+	//七牛云上传配置
+	'qiniu' => [
+	    'accessKey' => 'PAPQFhdWKpV-xxx-YtlDbF',
+	    'secretKey' => 'xxxxx',
+	    'bucket' => 'xx' //上传的空间
+	],
+    
 
 ### 第二步
     在控制器中
-    $qiniu = new \Tiramisu\Qiniu();
+    $qiniu = new \jialingfei\tiramisu\Qiniu();
     $arr = $qiniu->upload();
     返回上传七牛云中路径
     暂时支持form表单提交
