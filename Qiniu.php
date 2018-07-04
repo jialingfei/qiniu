@@ -1,10 +1,11 @@
 <?php
 namespace jialingfei\tiramisu;
 
-require_once '../vendor/autoload.php';
+require_once 'autoload.php';//加载类
 
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
+use think\Config;
 /**
 * 七牛上传图片
 */
@@ -20,9 +21,9 @@ class Qiniu
 	 * @param string $bucket    [description]
 	 */
 	public function __construct($accessKey = '', $secretKey = '', $bucket = ''){
-		$this->_accessKey = 'PAPQFhdWK';//更改为自己的
-		$this->_secretKey = 'lZmYBjLe';//更改为自己的
-		$this->_bucket = 'tir';//更改为自己的
+		$this->_accessKey = Config::get('qiniu')['accessKey'];//更改为自己的
+		$this->_secretKey = Config::get('qiniu')['secretKey'];//更改为自己的
+		$this->_bucket = Config::get('qiniu')['bucket'];//更改为自己的
 	}
 	
 	/**
@@ -81,5 +82,8 @@ class Qiniu
             //返回图片的完整URL
             return ["err"=>0,"msg"=>"上传完成","data"=>$ret['key']];
         }
+	}
+	public function test(){
+		return $this->_getToken();
 	}
 }
