@@ -1,5 +1,5 @@
 <?php
-namespace Tiramisu;
+namespace jialingfei\tiramisu;
 
 require_once '../vendor/autoload.php';
 
