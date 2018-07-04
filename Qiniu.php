@@ -29,7 +29,7 @@ class Qiniu
 	 * 获取bucket值  上传的空间
 	 * @return [type] [description]
 	 */
-	public function _getBucket(){
+	private function _getBucket(){
 		if ($this->_bucket) {
 			return $this->_bucket;
 		}
@@ -40,7 +40,7 @@ class Qiniu
 	 * 获取token
 	 * @return [type] [description]
 	 */
-	public function _getToken(){
+	private function _getToken(){
 		$bucket = $this->_getBucket();
 		if (!$bucket) {
 			return false;
